@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Basic Review</title>
+    
+</head>
+<body>
+    <header>
+        <h1 style="margin-left: 42%;">CSS Basic Review</h1>
+        <div style="background-color: black; text-align: center; padding: 10px;">
+            <nav>
+                <ul style=" padding: 0; margin: 0; display: flex; justify-content: center;"></ul>>
+                    <li style="margin: 15px;display: inline"><a href="#" style="color: white; text-decoration: none;">Home</a> </li>
+                    <li style="margin: 15px;display: inline"><a href="#" style="color: white; text-decoration: none;">About</a> </li>
+                    <li style="margin: 15px;display: inline"><a href="#" style="color: white; text-decoration: none;">Contact</a> </li>
+                    <li style="margin: 15px;display: inline"><a href="#" style="color: white; text-decoration: none;">Service</a> </li>
+
+    
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div style="background-color: gray;padding:15px;border-radius:10px;margin-top: 20px;">
+        <h2>Introduction</h2>
+        <p >A brief introduction paragraph that uses different text prperties such as font-size,color,and line-height.</p>
+    </div>
+    <div style="display: flex; justify-content:space-around;gap:15px;margin-top:20px">
+        <div style="padding: 15px; border:1px solid;border-radius:3px;text-align:center">
+        <h3 >Box 1:Title</h3>
+        <h5>Content 1</h5>
+        <p>Content inside box 1</p>
+    </div>
+    <div style="padding: 15px; border:1px solid;border-radius:3px;text-align:center">
+        <h3 >Box 2:Title</h3>
+        <h5>Content 2</h5>
+        <p>Content inside box 1</p>
+    </div>
+    <div style="padding: 15px; border:1px solid;border-radius:3px;text-align:center">
+        <h3 >Box 3:Title</h3>
+        <h5>Content 3</h5>
+        <p>Content inside box 1</p>
+    </div>
+    </div>
+    <div style="background-color: gray;padding:15px;border-radius:10px;margin-top: 20px;">
+        <h2>Pseudo-Classes Example</h2>
+         <p style="padding: 10px;"onmouseover="this.style.backgroundColor='red'"
+         onmouseout="this.style.backgroundColor='grey'">item 1 (hover,active,etc)</p>
+         <p style="padding: 10px;"onmousedown="this.style.backgroundColor='green'"
+         onmouseup="this.style.background='black';this.style.color='white'">item 2</p>
+
+         <h2> Pseudo-Elements Example</h2>
+         <p id="Pseudo-element"> This paragraph has pseudo-elements applied before and after it.</p>
+         <style>
+        
+            #Pseudo-element::before{
+                content: "start";
+                font-size: 20px;
+                font-weight: bold;
+                color:green;
+            }
+            #Pseudo-element::after{
+                content: "End";
+                font-size: 20px;
+                font-weight: bold;
+                color:blue;
+            }
+        </style>
+       
+    </div>
+</body>
+</html>

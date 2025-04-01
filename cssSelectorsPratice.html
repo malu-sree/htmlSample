@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors Pratice</title>
+    <style>
+      *{
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+      }
+      h3{
+        font-size: 20px;
+        color:brown;
+      }
+      .highlight{
+        background-color: yellow;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 20px;
+      }
+      .selector{
+        background-color:lightgrey;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 20px;
+      }
+      #unique{
+        
+        color:red;
+        
+      }
+      input[type='text']{
+        background-color: lightblue;
+        padding:10px;
+        border-radius: 5px;
+        margin-top:10px ;
+
+      }
+      div p{
+        color:green;
+        font-style: italic;
+      }
+      ul>li{
+        color: blue;
+        font-weight: bold;
+      }
+      h2+p{
+        color: purple;
+        font-style: oblique;
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="margin-left: 42%;">CSS Selector Pratice</h1>
+        <div style="background-color: black; text-align: center; padding: 10px;">
+            <nav>
+                <ul style=" padding: 0; margin: 0; display: flex; justify-content: center;"></ul>>
+                    <li style="margin: 15px;display: inline"><a href="#" style="color: white; text-decoration: none;">Home</a> </li>
+                    <li style="margin: 15px;display: inline"><a href="#" style="color: white; text-decoration: none;">About</a> </li>
+                    <li style="margin: 15px;display: inline"><a href="#" style="color: white; text-decoration: none;">Contact</a> </li>
+                    <li style="margin: 15px;display: inline"><a href="#" style="color: white; text-decoration: none;">Service</a> </li>
+
+    
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="selector">
+        <h2>Universal Selector Example</h2>
+        <p>This Paragraph is styled using the universal selector which applies to all elements</p>
+    </div>
+    <div class="selector">
+        <h2>Type Selector Example</h2>
+        <h3>Heading and Paragraph</h3>
+        <p>This is an example of a paragraph styled by the type selector</p>
+    </div>
+    <div class="highlight">
+        <h2>Class Selector Example</h2>
+        <p>This section is styled using a class selector named highlight</p>
+    </div>
+    <div class="selector">
+        <h2 id="unique">ID Selector Example</h2>
+        <p id="unique">This section is styled using an ID selector named # unique</p>
+    </div>
+    <div class="selector">
+        <h2>Attribute Selector Example</h2>
+       <label>Type your name</label>
+       <br/>
+       <input type="text" value="name" placeholder="your name">
+    </div>
+    <div class="selector">
+        <h2>Descendant Selector Example</h2>
+        <p>This Paragraph is inside a div and styled by a descendant selector (div p)</p>
+    </div>
+    <div class="selector">
+        <h2>Child Selector Example</h2>
+        <ul>
+            <li>first child item styled using child selector (ul>li)</li>
+            <li>Another child item in the list</li>
+        </ul>
+    </div>
+    <div class="selector">
+        <h2>Adjacent Sibling Selector Example</h2>
+        <h1>This is a heading</h1>
+        <p>This paragraph is styled as an adjacent sibling to the above heading (h2+p)</p>
+    </div>
+</body>
+</html>

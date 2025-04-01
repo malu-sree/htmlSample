@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form Exercise</title>
+    <style>
+        body{
+            font-family: Arial;
+            margin: 30px;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="margin-left: 40%;">Contact Form Exercise</h1>
+        <div style="background-color: black; text-align: center; padding: 10px;">
+            <nav>
+                <ul style=" padding: 0; margin: 0; display: flex; justify-content: center;"></ul>>
+                    <li style="margin: 15px;display: inline"><a href="#" style="color: white; text-decoration: none;">Home</a> </li>
+                    <li style="margin: 15px;display: inline"><a href="#" style="color: white; text-decoration: none;">About</a> </li>
+                    <li style="margin: 15px;display: inline"><a href="#" style="color: white; text-decoration: none;">Contact</a> </li>
+    
+                </ul>
+            </nav>
+        </div>
+    </header>
+        <section>
+            <h2>Contact Us</h2>
+            <form>
+                <label >Name:</label>
+                <input type="text"  name="name" placeholder="enter your name">
+                <br/>
+                <label >Email:</label>
+                <input type="email"  name="email" placeholder="enter your Email">
+                <br/>
+                <label>Phone Number:</label>
+                <input type="tel"  name="phone" placeholder="enter your phone number">
+                <br/>
+                <label >Message:</label>
+                <textarea  name="message" rows="4" placeholder="enter the message"></textarea>
+                <br/>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My First HTML Form</p>
+    </footer>
+</body>
+</html>
