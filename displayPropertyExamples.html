@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Property Examples</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .blockElement{
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            margin: 30px;
+            border-radius: 2px;
+        }
+        .inline-container p{
+            display: inline;
+            text-align: center;
+
+        }
+        .inlineElement{
+            background-color: blue;
+            color: white;
+            padding: 5px 20px;
+            margin: 20px;
+            border-radius: 2px;
+        }
+        .block-container p{
+            display:inline-block;
+            text-align: center;
+        }
+        .inlineBlock{
+            background-color: orange;
+            color: white;
+            padding: 15px 15px;
+            margin: 20px;
+            border-radius: 2px;
+        }
+
+        .block-container,.inline-container,.element-container{
+            margin-bottom: 40px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="text-align:center;">Display Property Examples</h1>
+        <div style="background-color: black; text-align: center; padding: 10px;">
+            <nav>
+                <ul style=" padding: 0; margin: 0; display: flex; justify-content: center;"></ul>>
+                    <li style="margin: 15px;display: inline"><a href="#" style="color: white; text-decoration: none;">Home</a> </li>
+                    <li style="margin: 15px;display: inline"><a href="#" style="color: white; text-decoration: none;">About</a> </li>
+                    <li style="margin: 15px;display: inline"><a href="#" style="color: white; text-decoration: none;">Services</a> </li>
+                    <li style="margin: 15px;display: inline"><a href="#" style="color: white; text-decoration: none;">Contact</a> </li>
+    
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="elemet-container" >
+        <p class="blockElement">Block Element 1</p>
+        <p class="blockElement">Block Element 2</p>
+        <p class="blockElement">Block Element 3</p>
+
+    </div>
+    <br/>
+    <br/>
+    <div class="inline-container">
+        <p class="inlineElement">inline elemet 1</p>
+        <p class="inlineElement">inline elemet 2</p>
+        <p class="inlineElement">inline elemet 3</p>
+
+    </div>
+    <div class="block-container">
+        <p class="inlineBlock">Inline block 1</p>
+        <p class="inlineBlock">Inline block 2</p>
+        <p class="inlineBlock">Inline block 3</p>
+
+    </div>
+</body>
+</html>

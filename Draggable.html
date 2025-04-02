@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draggable Exercises</title>
+    <style>
+        header{
+           background-color: lightgray;
+           text-align: center;
+           padding: 10px;
+           font-size: 25px; 
+        }
+        body{
+            margin: 0;
+            padding: 0;
+
+        }
+        *{
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container{
+            border: 2px solid black;
+            width:50%;
+            height: 300px;
+            margin: 100px;
+            position: relative;
+        }
+        .draggable{
+            background-color: green;
+           color: white;
+           border: none;
+           padding: 10px 20px;
+           position: absolute;
+           top: 50%;
+           left: 50%;
+           border-radius: 5px;
+           cursor: grab;
+           
+        }
+        .fixed{
+            background-color: blue;
+            color: white;
+           border: none;
+           padding: 15px 25px;
+           position: fixed;
+           margin-left: 40px;
+           border-radius: 5px;
+           cursor: grab;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Draggable exercises</h1>
+    </header>
+  <div class="container">
+  <div class="draggable" >  Drag Me Within Box</div>
+  </div>
+  <Div class="fixed">
+    Darg me within window
+  </Div>
+  <footer style="text-align: center; margin-top: 160px;">
+    © 2024 Draggable Divs Exercise
+</footer>
+
+</body>
+</html>

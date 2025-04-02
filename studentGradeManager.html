@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grades Manager</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 20px;
+        }
+        .container{
+            width:400px;
+            height: 600px;
+            margin: auto;
+            padding: 30px;
+            border: 2px solid black;
+            border-radius: 4px;
+        }
+        button{
+            background-color: blue;
+            color: white;
+            padding: 10px 10px;
+            border: none;
+            margin: 4px auto;
+            display: block;
+
+        }
+        input{
+            width: 50%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Student Grade Manager</h1>
+        </header>
+
+        <div>
+            <label for="name">Student Name:</label>
+            <br/>
+            <input type="text" id="name" placeholder="Enter your name" />
+            <br/>
+            <br/>
+            <label for="grade">Grade:</label>
+            <br/>
+            <input type="number" id="grade" placeholder="Enter grade"/>
+            <br/>
+            <br/>
+        </div>
+        <div>
+            <button onclick="addstudent()">Add student</button>
+            <br/>
+            <br/>
+            <button onclick="displayGrade()">Display Grades</button>
+            <h3>Grades List:</h3>
+            <ol id="gradeList"></ol>
+        </div>
+        <div>
+            <button onclick="calculateAverage()">Calculate Average grade</button>
+            <h3>Average grade:<span id="averageGrade"></span></h3>
+        </div>
+    </div>
+<script>
+    let students=[];
+
+    function addstudent(){
+        let name=document.getElementById("name").value.trim();
+    let grade=document.getElementById("grade").value.trim();
+
+    if(name===""||grade===""){
+        alert("please enter both name and grade");
+        return
+    }
+
+    grade=Number(grade);
+    if(isNaN(grade)||grade<0||grade>100){
+        alert("Please enter a valid grade between 0 and 100.");
+        return;
+    }
+
+    students.push({name,grade});
+    document.getElementById("name").value="";
+    document.getElementById("grade").value="";
+
+
+}
+
+function displayGrade(){
+    let list=document.getElementById("gradeList");
+
+    list.innerHTML="";
+    students.forEach(student=>{
+        let li=document.createElement("li");
+        li.textContent=`${student.name}: ${student.grade}`;
+        list.appendChild(li);
+    })
+}
+
+function calculateAverage(){
+    if(students.length===0){
+        alert("no students");
+        return;
+    }
+    let total=students.reduce((sum,student)=>sum+student.grade,0);
+    let average=(total/students.length)
+    document.getElementById("averageGrade").textContent=average.toFixed(2);//Rounds the result to two decimal places and returns a string
+}
+
+
+</script>
+</body>
+</html>

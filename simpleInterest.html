@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple interest Calulator</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 20px;
+        }
+        .container{
+            width:300px;
+            margin: auto;
+            padding: 30px;
+            border: 2px solid black;
+            border-radius: 4px;
+        }
+        button{
+            background-color: green;
+            color: white;
+            padding: 10px 10px;
+            border: none;
+            margin: 10px auto;
+            display: block;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+    <header>
+        <h1>Simple Interest Calculator</h1>
+    </header>
+<div>
+    <label for="principal">Principal Amount:</label>
+    <br/>
+    <input type="number" id="principal" placeholder="enter principal amount" required/>
+    <br/>
+    <br/>
+    <label for="year">Year:</label>
+    <br/>
+    <input type="number" id="year" placeholder="enter your years" required/>
+    <br/>
+    <br/>
+    <label for="interest">Rate of Interest:</label>
+    <br/>
+    <input type="number" id="interest" placeholder="enter interest Rate" required/>
+    <br/>
+    <br/>
+    <button onclick="calculateInterest()">Calculate Interest</button>
+</div>
+<div>
+    <h3>Total Amount: <span id="totalAmount"></span></h3>
+    <h3>Interest: <span id="calculatedInterest"></span></h3>
+    <h3>Additional information:<span id="additionalInfo"></span></h3>
+</div>
+</div>
+<script>
+    function calculateInterest(){
+        let principal=parseFloat(document.getElementById('principal').value);
+        let year=parseInt(document.getElementById('year').value);
+        let rate=parseFloat(document.getElementById('interest').value);
+
+        if(isNaN(principal)||isNaN(year)||isNaN(rate)||principal<=0||year<=0||rate<=0){
+            alert("please enter valid values")
+            return
+        }
+        let interest=(principal*rate*year)/100;
+        let total=principal+interest;
+
+        document.getElementById('calculatedInterest').textContent=interest.toFixed(2);
+        document.getElementById('totalAmount').textContent=total.toFixed(2);
+        document.getElementById('additionalInfo').textContent="interest calculated successfully";
+    }
+</script>
+</body>
+</html>

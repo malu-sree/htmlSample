@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Layout Example</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 30px;
+            margin: 30px;
+            gap: 20px;
+        }
+        #box{
+            background-color: green;
+            color: white;
+            padding: 20px;
+            width: 500px;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 18px;
+            flex: 1 1 calc(33.33% - 40px);
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="text-align:center;">Display Property Examples</h1>
+        <div style="background-color: black; text-align: center; padding: 10px;">
+            <nav>
+                <ul style=" padding: 0; margin: 0; display: flex; justify-content: center;"></ul>>
+                    <li style="margin: 15px;display: inline"><a href="#" style="color: white; text-decoration: none;">Home</a> </li>
+                    <li style="margin: 15px;display: inline"><a href="#" style="color: white; text-decoration: none;">About</a> </li>
+                    <li style="margin: 15px;display: inline"><a href="#" style="color: white; text-decoration: none;">Services</a> </li>
+                    <li style="margin: 15px;display: inline"><a href="#" style="color: white; text-decoration: none;">Contact</a> </li>
+    
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <p id="box">Box 1</p>
+        <p id="box">Box 2</p>
+        <p id="box">Box 3</p>
+        <p id="box">Box 4</p>
+        <p id="box">Box 5</p>
+        <p id="box">Box 6</p>
+
+    </div>
+</body>
+</html>
