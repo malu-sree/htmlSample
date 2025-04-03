@@ -41,16 +41,17 @@
     <label for="year">Year:</label>
     <br/>
     <input type="number" id="year" placeholder="enter your years" required/>
-    <br/>
+    <!-- <br/>
     <br/>
     <label for="interest">Rate of Interest:</label>
     <br/>
-    <input type="number" id="interest" placeholder="enter interest Rate" required/>
+    <input type="number" id="interest" placeholder="enter interest Rate" required/> -->
     <br/>
     <br/>
     <button onclick="calculateInterest()">Calculate Interest</button>
 </div>
 <div>
+    <h3>Interest Rate: <span id="appliedRate"></span>%</h3>
     <h3>Total Amount: <span id="totalAmount"></span></h3>
     <h3>Interest: <span id="calculatedInterest"></span></h3>
     <h3>Additional information:<span id="additionalInfo"></span></h3>
@@ -60,15 +61,31 @@
     function calculateInterest(){
         let principal=parseFloat(document.getElementById('principal').value);
         let year=parseInt(document.getElementById('year').value);
-        let rate=parseFloat(document.getElementById('interest').value);
+        //let rate=parseFloat(document.getElementById('interest').value);
 
-        if(isNaN(principal)||isNaN(year)||isNaN(rate)||principal<=0||year<=0||rate<=0){
+        if(isNaN(principal)||isNaN(year)||principal<=0||year<=0){
             alert("please enter valid values")
             return
         }
+        let rate;
+        if (principal < 1000) {
+            rate = 5;
+        } else if (principal >= 1000 && principal <= 5000) {
+            rate = 7;
+        } else {
+            rate = 10;
+        }
+
+
+        if (year>5){
+            rate+=2;
+        }
+
         let interest=(principal*rate*year)/100;
         let total=principal+interest;
 
+
+        document.getElementById('appliedRate').textContent = rate.toFixed(2);
         document.getElementById('calculatedInterest').textContent=interest.toFixed(2);
         document.getElementById('totalAmount').textContent=total.toFixed(2);
         document.getElementById('additionalInfo').textContent="interest calculated successfully";

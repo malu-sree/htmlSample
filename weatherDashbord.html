@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashbord</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 20px;
+        }
+        .container{
+            width:400px;
+            height: 600px;
+            margin: auto;
+            padding: 30px;
+            border: 2px solid black;
+            border-radius: 4px;
+        }
+        button{
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+        }
+        input{
+            width: 50%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Weather Dashboard</h1>
+        </header>
+
+        <div>
+            <input type="text" id="cityName" placeholder="Enter city name"/>
+            <button onclick="getWeather()">Search</button>
+        </div>
+        <div>
+            <p><strong>City Name:<span id="cityNameDisplay"></span></strong></p>
+            <p><strong>Temperature:<span id="temperature"></span></strong></p>
+            <p><strong>Humidity:<span id="humidity"></span></strong></p>
+
+        </div>
+    </div>
+    <script>
+       async function getWeather(){
+            const apiKey="e282ff0abc8331d8ffae938a2b3b78ea";
+            let city=document.getElementById("cityName").value.trim();
+            
+            if(city===""){
+                alert("Please enter a city name.");
+                return;
+            }
+
+            const data=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
+
+            const data2=await data.json();//is used to convert the response from the API into a JavaScript object.
+
+            document.getElementById("cityNameDisplay").textContent=data2.name;
+            document.getElementById("temperature").textContent=data2.main.temp + "C";
+            document.getElementById("humidity").textContent=data2.main.humidity + "%";
+        }
+    </script>
+</body>
+</html>
