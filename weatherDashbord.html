@@ -62,7 +62,7 @@
 
             const data=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
 
-            const data2=await data.json();//is used to convert the response from the API into a JavaScript object.
+            const data2=await data.json();
 
             document.getElementById("cityNameDisplay").textContent=data2.name;
             document.getElementById("temperature").textContent=data2.main.temp + "C";

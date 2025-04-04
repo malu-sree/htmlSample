@@ -75,12 +75,12 @@
             this.quantity=quantity;
         }
 
-        product.prototype.updateQuantity=function(amount){
-            this.quantity+=amount;
-            if(this.quantity<0){
-                this.quantity=0;
-            }
-        }
+        //product.prototype.updateQuantity=function(amount){
+           // this.quantity+=amount;
+           // if(this.quantity<0){
+           //     this.quantity=0;
+           // }
+       // }
 
             product.prototype.getDetails=function(){
                 return `${this.name}-${this.price}-${this.quantity}`;
